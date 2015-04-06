@@ -2,22 +2,30 @@
 
 app.controller('AuthController', function($scope, $location, Auth) {
 
+	if(Auth.signedIn()) {
+		$location.path('/');
+	}
+
 	$scope.register = function(user) {
 		Auth.register(user).then(function() {
-			console.log("Register successfullly!");
+			toaster.pop('success', "Registered successfullly.");
+			//console.log("Registered successfullly!");
 			$location.path('/');
 		}, function(err) {
-			console.log("Error....");
+			toaster.pop('error', "Something went wrong.");
+			//console.log("Error....");
 		});
 	};
 
 	$scope.login = function(user) {
 		Auth.login(user)
 		.then(function() {
-			console.log("Logged in successfullly!");
+			toaster.pop('success', "Logged in successfullly.");
+			//console.log("Logged in successfullly!");
 			$location.path('/');
 		}, function(err) {
-			console.log("Error...");
+			toaster.pop('error', "Something went wrong.");
+			//console.log("Error...");
 		});
 	};
 
@@ -29,10 +37,11 @@ app.controller('AuthController', function($scope, $location, Auth) {
 			$scope.user.email = '';
 			$scope.user.oldPass = '';
 			$scope.user.newPass = '';
-
-			console.log("Password change successfullly!!");
+			toaster.pop('success', "Password changed successfullly.");
+			//console.log("Password change successfullly!!");
 		}, function(err) {
-			console.log("Error...");
+			toaster.pop('error', "Something went wrong.");
+			//console.log("Error...");
 
 		});
 	};
