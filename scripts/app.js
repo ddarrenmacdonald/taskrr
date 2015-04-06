@@ -7,12 +7,25 @@ var app = angular
     'ngRoute',    
     'firebase'
   ])
-  .constant('FURL', 'https://your-firebase.firebaseio.com/')  
+  .constant('FURL', 'https://taskrr.firebaseio.com/')  
   .config(function ($routeProvider) {
     $routeProvider      
       .when('/', {
         templateUrl: 'views/main.html'        
       })
+      .when('/post', {
+        templateUrl: 'views/post.html',
+        controller: 'TaskController'
+      })
+      .when('/edit/:taskId', {
+        templateUrl: 'views/edit.html',
+        controller: 'TaskController'
+      })
+      .when('/browse', {
+        templateUrl: 'views/browse.html',
+        controller: 'TaskController'
+      })
+
       .otherwise({
         redirectTo: '/'
       });
