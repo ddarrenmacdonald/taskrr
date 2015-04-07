@@ -6,13 +6,19 @@ var app = angular
     'ngResource',
     'ngRoute',
     'firebase',
-    'toaster'
+    'toaster',
+    'angularMoment'
   ])
   .constant('FURL', 'https://taskrr.firebaseio.com/')
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/browse.html'
+        templateUrl: 'views/browse.html',
+        controller: 'BrowseController'
+      })
+      .when('/browse/:taskId', {
+        templateUrl: 'views/browse.html',
+        controller: 'BrowseController'
       })
       .when('/login', {
         templateUrl: 'views/login.html',
@@ -21,10 +27,6 @@ var app = angular
       .when('/register', {
         templateUrl: 'views/register.html',
         controller: 'AuthController'
-      })
-      .when('/browse', {
-        templateUrl: 'views/browse.html',
-        controller: 'TaskController'
       })
 
       .otherwise({

@@ -62,8 +62,6 @@ app.factory('Auth', function(FURL, $firebaseAuth, $firebase) {
 		}
 	});
 
-	return Auth;
-});
 
 // Get Gravatar
 function get_gravatar(email, size) {
@@ -293,3 +291,6 @@ function get_gravatar(email, size) {
 
       return 'https://www.gravatar.com/avatar/' + MD5(email) + '.jpg?d=identicon';
     }
+
+    return Auth;
+});
