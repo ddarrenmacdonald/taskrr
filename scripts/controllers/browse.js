@@ -26,7 +26,7 @@ app.controller('BrowseController', function($scope, $routeParams, toaster, Task,
 
 	$scope.cancelTask = function(taskId) {
 		Task.cancelTask(taskId).then(function() {
-			toaster.pop('success', 'This task is cancelled successfully.');
+			toaster.pop('success', "This task is cancelled successfully.");
 		});
 	};
 

@@ -17,7 +17,7 @@ app.controller('TaskController', function($scope, $location, toaster, Task, Auth
 
 	$scope.editTask = function(task) {
 		Task.editTask(task).then(function() {
-			toaster.pop('success', 'Task is updated.');
+			toaster.pop('success', "Task is updated.");
 		});
 	};
 

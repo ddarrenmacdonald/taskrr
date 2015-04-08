@@ -20,12 +20,12 @@ var app = angular
         templateUrl: 'views/browse.html',
         controller: 'BrowseController'
       })
-      .when('/login', {
-        templateUrl: 'views/login.html',
-        controller: 'AuthController'
-      })
       .when('/register', {
         templateUrl: 'views/register.html',
+        controller: 'AuthController'
+      })
+      .when('/login', {
+        templateUrl: 'views/login.html',
         controller: 'AuthController'
       })
 
