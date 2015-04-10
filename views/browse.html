@@ -115,6 +115,10 @@
 
 								<div class="row" ng-repeat="offer in offers">
 									<div class="col-md-10">
+										<button ng-show="offer.accepted" class="btn btn-success btn-xs disabled">Assigned</button>
+
+										<button ng-show="isTaskCreator(selectedTask) && isOpen(selectedTask)" class="btn btn-info btn-xs" ng-click="acceptOffer(offer.$id,offer.uid)">Accept - ${{offer.total}}</button>
+
 										<button ng-show="isOfferMaker(offer) && isOpen(selectedTask)" class="btn btn-danger btn-xs" ng-click="cancelOffer(offer.$id)">Cancel My Offer - ${{offer.total}}</button>
 										
 										<img ng-src="{{offer.gravatar}}" class="img-circle offer gravatar">
