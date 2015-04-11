@@ -28,7 +28,10 @@ var app = angular
         templateUrl: 'views/login.html',
         controller: 'AuthController'
       })
-
+      .when('/dashboard', {
+        templateUrl: 'views/dashboard.html'
+      })
+      
       .otherwise({
         redirectTo: '/'
       });
