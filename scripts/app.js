@@ -10,6 +10,13 @@ var app = angular
     'angularMoment'
   ])
   .constant('FURL', 'https://taskrr.firebaseio.com/')
+  .run(function($rootScope, $location) {
+    $rootScope.$on("$routeChangeError", function(event, next, previous, error) {
+      if (error === "AUTH_REQUIRED") {
+        $location.path("/login");
+      }
+    });
+  })
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -29,7 +36,13 @@ var app = angular
         controller: 'AuthController'
       })
       .when('/dashboard', {
-        templateUrl: 'views/dashboard.html'
+        templateUrl: 'views/dashboard.html',
+        controller: 'DashboardController',
+        resolve: {
+          currentAuth: function(Auth) {
+            return Auth.requireAuth();
+          }
+        }
       })
       
       .otherwise({
