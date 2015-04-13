@@ -10,7 +10,15 @@ a, a:hover, a:focus {
   color: #121515;
 }
 
+/* Buttons */
+.btn-danger {
+  padding: 12px;
+}
 
+/* Fluid Container */
+.container-fluid  {
+  background-color: #56A0D3;
+}
 
 /* Form */
 
@@ -24,6 +32,13 @@ a, a:hover, a:focus {
 
 .navbar {
   margin-bottom: 0px;
+}
+
+/* Nav Bar - Brand */
+.navbar-brand {
+  font-family: open-sans;
+  font-size: 30px;
+  margin-top: 8px;
 }
 
 .title {
