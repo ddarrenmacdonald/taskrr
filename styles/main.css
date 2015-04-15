@@ -162,3 +162,12 @@ a, a:hover, a:focus {
   width: 35px;
   margin-right: 5px;
 }
+
+/* Footer */
+
+.bottomFooter {
+  text-align: center;
+  color: #56A0D3;
+  font-size: 18px;
+  padding-bottom: 12px;
+}
